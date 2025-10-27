@@ -1,0 +1,117 @@
+/* --- 1. Import Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #4a90e2;
+    --primary-hover: #3a82d0; /* Added a hover color */
+    --danger-color: #d0021b;
+    --background-color: #f4f7f6;
+    --card-background: #ffffff;
+    --text-color: #333;
+    --text-light: #555;
+    --border-radius: 8px;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Added a standard shadow */
+}
+
+body {
+    margin: 0;
+    /* --- 2. Use new font --- */
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem; /* Changed to rem for consistency */
+}
+
+/* --- 3. Style the header as a navbar --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 15px; 
+
+    /* New styles for the navbar card */
+    background-color: var(--card-background);
+    padding: 1.25rem 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+/* --- 4. Style the new logo --- */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    outline: none;
+}
+
+.logo-icon {
+    color: var(--primary-color);
+}
+
+.logo-link h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* --- 5. Style the navigation links --- */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Style for the "Dashboard" link */
+.nav-link:not(.button) {
+    color: var(--text-light);
+}
+
+.nav-link:not(.button):hover {
+    background-color: #f0f0f0;
+    color: var(--text-color);
+}
+
+/* --- 6. Improved button styles --- */
+.button {
+    padding: 8px 18px; /* Slightly adjusted padding */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px); /* Add a subtle "lift" on hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* This is where your pages will render */
+main {
+    width: 100%;
+}

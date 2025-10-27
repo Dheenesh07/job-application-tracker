@@ -1,0 +1,126 @@
+.form-container {
+    background-color: var(--card-background);
+    padding: 30px 40px; /* Increased padding */
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    margin: 20px auto; 
+    box-shadow: var(--shadow); /* Use root shadow */
+}
+
+.form-container h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    width: 100%; /* Ensure it takes full width in a row */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+/* New: Form row for side-by-side fields */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px; /* Slightly softer radius */
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif; /* Inherit font */
+    transition: all 0.2s ease-in-out;
+}
+
+/* New: Focus styles */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* New: Error state for inputs */
+.form-group input.input-error,
+.form-group select.input-error {
+    border-color: var(--danger-color);
+    background-color: #fff8f8;
+}
+.form-group input.input-error:focus,
+.form-group select.input-error:focus {
+    box-shadow: 0 0 0 3px rgba(208, 2, 27, 0.2);
+}
+
+.error-text {
+    color: var(--danger-color);
+    margin-top: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* New: Actions block for buttons */
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 2rem;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 2rem;
+}
+
+/* Main button is already styled by .button */
+.button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+.button[disabled]:hover {
+    background-color: #ccc;
+}
+
+/* New: Style for "Cancel" button */
+.button-back {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--text-light);
+    transition: all 0.2s ease-in-out;
+}
+.button-back:hover {
+    background-color: #f0f0f0;
+    color: var(--text-color);
+}
+
+/* NEW: Adds a red asterisk after any label with the 'required' class */
+.form-group label.required::after {
+    content: " *";
+    color: var(--danger-color);
+    font-weight: bold;
+    margin-left: 2px;
+}
